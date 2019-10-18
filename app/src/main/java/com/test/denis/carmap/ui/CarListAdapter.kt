@@ -11,7 +11,7 @@ import com.test.denis.carmap.model.CarModel
 import kotlinx.android.synthetic.main.item_car.view.*
 
 class CarListAdapter(
-    private val callback: ((CarModel) -> Unit)
+    var callback: ((CarModel) -> Unit)
 ) : RecyclerView.Adapter<CarItemViewHolder>() {
 
     private val items: MutableList<CarModel> = mutableListOf()

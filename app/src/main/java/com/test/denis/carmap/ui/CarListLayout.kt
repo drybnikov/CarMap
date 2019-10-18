@@ -40,4 +40,8 @@ class CarListLayout @JvmOverloads constructor(
     fun setData(listItems: List<CarModel>) {
         carListAdapter.initData(listItems)
     }
+
+    fun setItemSelectedAction(action: (CarModel) -> Unit) {
+        carListAdapter.callback = action
+    }
 }

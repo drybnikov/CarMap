@@ -42,6 +42,8 @@ class CarMapActivity : AppCompatActivity(), Injectable, HasSupportFragmentInject
         if (savedInstanceState == null) {
             getDeviceLocation()
         }
+
+        carListLayout.setItemSelectedAction { onListItemSelected(it) }
     }
 
     private fun initViewModel() {
@@ -69,6 +71,10 @@ class CarMapActivity : AppCompatActivity(), Injectable, HasSupportFragmentInject
                 setAction(R.string.retry) { viewModel.retryLoad() }
                 this.dismiss()
             }
+    }
+
+    private fun onListItemSelected(carModel: CarModel) {
+        viewModel.onCarSelected(carModel)
     }
 
     private fun toggleLoadingIndicatorVisibility(isVisible: Boolean) {

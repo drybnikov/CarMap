@@ -60,12 +60,18 @@ class CarsMapFragment : SupportMapFragment(), Injectable, OnMapReadyCallback {
         }
 
         viewModel.loadCarsData().observe(this, Observer { onDataLoaded(it) })
+
+        viewModel.onCarSelectedData.observe(this, Observer { moveCameraToSelectedCar(it) })
     }
 
     private fun onDataLoaded(resource: Resource<List<CarModel>>) {
         when (resource) {
             is Resource.Success -> showCarsOnMap(resource.data)
         }
+    }
+
+    private fun moveCameraToSelectedCar(position: LatLng) {
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, CAR_ZOOM))
     }
 
     @Suppress("DEPRECATION")
@@ -123,6 +129,7 @@ class CarsMapFragment : SupportMapFragment(), Injectable, OnMapReadyCallback {
     }
 
     companion object {
-        private const val DEFAULT_ZOOM = 11.0f
+        private const val DEFAULT_ZOOM = 12.0f
+        private const val CAR_ZOOM = 14.0f
     }
 }

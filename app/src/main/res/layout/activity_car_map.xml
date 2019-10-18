@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:paddingTop="@dimen/margin_padding_size_medium"
+        android:paddingTop="@dimen/margin_padding_size_large"
         app:anchorPoint="@dimen/car_list_anchor_point"
         app:peekHeight="@dimen/car_list_touch_height"
         app:layout_behavior="com.test.denis.carmap.util.BottomSheetBehaviorGoogleMapsLike" />

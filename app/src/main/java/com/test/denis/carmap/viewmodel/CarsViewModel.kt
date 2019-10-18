@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.gms.maps.model.LatLng
 import com.test.denis.carmap.model.CarModel
 import com.test.denis.carmap.network.CarsRepository
 import com.test.denis.carmap.network.Resource
@@ -16,6 +17,8 @@ class CarsViewModel @Inject constructor(private val repository: CarsRepository) 
 
     private val disposables = CompositeDisposable()
     private val data = MutableLiveData<Resource<List<CarModel>>>()
+    private val _carSelectionData = MutableLiveData<LatLng>()
+    val onCarSelectedData: LiveData<LatLng> = _carSelectionData
 
     val loadingProgress = MutableLiveData<Boolean>()
 
@@ -58,5 +61,9 @@ class CarsViewModel @Inject constructor(private val repository: CarsRepository) 
         if (loadingProgress.value == false) {
             loadData()
         }
+    }
+
+    fun onCarSelected(model: CarModel) {
+        _carSelectionData.postValue(LatLng(model.latitude, model.longitude))
     }
 }
