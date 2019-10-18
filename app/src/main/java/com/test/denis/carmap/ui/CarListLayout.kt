@@ -25,7 +25,6 @@ class CarListLayout @JvmOverloads constructor(
         super.onAttachedToWindow()
 
         behaviour = BottomSheetBehaviorGoogleMapsLike.from(this)
-        //behaviour.state = BottomSheetBehaviorGoogleMapsLike.STATE_COLLAPSED
         initRecyclerView()
     }
 
@@ -43,5 +42,9 @@ class CarListLayout @JvmOverloads constructor(
 
     fun setItemSelectedAction(action: (CarModel) -> Unit) {
         carListAdapter.callback = action
+    }
+
+    fun setBottomSheetState(newState: Int) {
+        behaviour.state = newState
     }
 }

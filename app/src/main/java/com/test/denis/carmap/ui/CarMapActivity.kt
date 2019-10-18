@@ -15,6 +15,7 @@ import com.test.denis.carmap.di.AbstractViewModelFactory
 import com.test.denis.carmap.di.Injectable
 import com.test.denis.carmap.model.CarModel
 import com.test.denis.carmap.network.Resource
+import com.test.denis.carmap.util.BottomSheetBehaviorGoogleMapsLike.STATE_ANCHOR_POINT
 import com.test.denis.carmap.util.setVisibility
 import com.test.denis.carmap.viewmodel.CarsViewModel
 import dagger.android.DispatchingAndroidInjector
@@ -75,6 +76,7 @@ class CarMapActivity : AppCompatActivity(), Injectable, HasSupportFragmentInject
 
     private fun onListItemSelected(carModel: CarModel) {
         viewModel.onCarSelected(carModel)
+        carListLayout.setBottomSheetState(STATE_ANCHOR_POINT)
     }
 
     private fun toggleLoadingIndicatorVisibility(isVisible: Boolean) {
