@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">car map</string>
+    <string name="app_name">Car Map</string>
+    <string name="retry">retry</string>
 </resources>

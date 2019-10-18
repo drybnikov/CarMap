@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MaterialComponents.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    app:cardElevation="@dimen/card_corner_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_padding_size_micro">
+
+        <ImageView
+            android:id="@+id/carImage"
+            android:layout_width="@dimen/avatar_width"
+            android:layout_height="@dimen/avatar_width"
+            android:layout_margin="@dimen/margin_padding_size_micro"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/carName"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            app:layout_constraintBottom_toTopOf="@+id/license"
+            app:layout_constraintLeft_toRightOf="@+id/carImage"
+            app:layout_constraintRight_toLeftOf="@id/fuelType"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="MINI Vanessa" />
+
+        <TextView
+            android:id="@+id/license"
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textColor="?colorPrimaryDark"
+            app:layout_constraintLeft_toRightOf="@id/carImage"
+            app:layout_constraintRight_toLeftOf="@id/fuelLevel"
+            app:layout_constraintTop_toBottomOf="@id/carName"
+            tools:text="M-VO0259" />
+
+        <TextView
+            android:id="@+id/fuelType"
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:paddingBottom="@dimen/margin_padding_size_small"
+            app:layout_constraintLeft_toRightOf="@id/carName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="D" />
+
+        <ProgressBar
+            android:id="@+id/fuelLevel"
+            android:layout_width="@dimen/fuel_width"
+            android:layout_height="@dimen/margin_padding_size_small"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:rotation="270"
+            android:progress="40"
+            app:layout_constraintLeft_toRightOf="@id/carName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fuelType"
+            app:layout_constraintBottom_toBottomOf="@id/carImage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

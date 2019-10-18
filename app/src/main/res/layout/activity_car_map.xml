@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/loadMoreBar"
+            android:id="@+id/loadingProgress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="16dp"
