@@ -39,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:textColor="?colorPrimaryDark"
+            android:textColor="?colorSecondaryVariant"
             app:layout_constraintLeft_toRightOf="@id/carImage"
             app:layout_constraintRight_toLeftOf="@id/fuelLevel"
             app:layout_constraintTop_toBottomOf="@id/carName"

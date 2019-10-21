@@ -9,5 +9,6 @@
     <color name="colorSurface">#ffffff</color>
     <color name="colorOnSurface">#000000</color>
 
+    <color name="colorBackgroundDark">#121212</color>
     <color name="colorPrimaryDark">#455a64</color>
 </resources>
