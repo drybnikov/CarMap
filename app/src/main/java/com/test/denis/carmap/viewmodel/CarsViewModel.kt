@@ -20,7 +20,7 @@ class CarsViewModel @Inject constructor(private val repository: CarsRepository) 
     private val _carSelectionData = MutableLiveData<LatLng>()
     val onCarSelectedData: LiveData<LatLng> = _carSelectionData
 
-    val loadingProgress = MutableLiveData<Boolean>()
+    val loadingProgress = MutableLiveData<Boolean>(false)
 
     fun loadCarsData(): LiveData<Resource<List<CarModel>>> {
         if (data.value == null) {
